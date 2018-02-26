@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Run Image') {
             steps {
-                sh 'docker run -d -p 4004:80 hellotomcat'
+                sh 'docker run -d -p 8080:8080 hellotomcat'
                 }
           }
     }
