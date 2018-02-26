@@ -4,6 +4,7 @@ FROM tomcat:8.0
 RUN mkdir -p /usr/local/tomcat/conf
 
 # Copy configurations (Tomcat Users, Manager)
+COPY settings.xml /usr/local/tomcat/conf/
 COPY tomcat-users.xml /usr/local/tomcat/conf/
 COPY context.xml /usr/local/tomcat/webapps/manager/META-INF/
 
