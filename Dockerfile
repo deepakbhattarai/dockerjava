@@ -1,4 +1,4 @@
-FROM tomcat:8-jre8
+FROM tomcat:8.0
 
 ADD HelloWorld.war /usr/local/tomcat/webapps/HelloWorld.war
 
