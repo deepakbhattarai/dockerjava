@@ -1,5 +1,8 @@
 FROM tomcat:8.0
 
+# Make conf directory
+RUN mkdir -p /usr/local/tomcat/conf
+
 # Copy configurations (Tomcat Users, Manager)
 COPY tomcat-users.xml /usr/local/tomcat/conf/
 COPY context.xml /usr/local/tomcat/webapps/manager/META-INF/
