@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent master
     stages {
 	stage('Compile Java'){
             steps {
@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Run Image') {
             steps {
-                sh 'docker run -d -p 8080:8080 hellotomcat'
+                sh 'docker run -d --name tomcat -p 8080:8080 tomcat:8.0'
                 }
           }
     }
