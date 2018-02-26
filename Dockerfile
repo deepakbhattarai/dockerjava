@@ -1,7 +1,7 @@
 FROM tomcat:8.0
 
 # Make conf directory
-RUN mkdir -p /usr/local/tomcat/conf
+# RUN mkdir -p /usr/local/tomcat/conf
 
 # Copy configurations (Tomcat Users, Manager)
 COPY settings.xml /usr/local/tomcat/conf/
