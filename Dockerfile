@@ -3,6 +3,9 @@ FROM tomcat:8.0
 # Make conf directory
 # RUN mkdir -p /usr/local/tomcat/conf
 
+# Install vim
+RUN yum install -y vim
+
 # Copy configurations (Tomcat Users, Manager)
 COPY settings.xml /usr/local/tomcat/conf/
 COPY tomcat-users.xml /usr/local/tomcat/conf/
