@@ -1,7 +1,7 @@
 FROM tomcat:8.0
 
 # Make conf directory
-# RUN mkdir -p /usr/local/tomcat/conf
+RUN mkdir -p /usr/local/tomcat/conf
 
 # Copy configurations (Tomcat Users, Manager)
 COPY manager.xml /usr/local/tomcat/conf/Catalina/localhost/
