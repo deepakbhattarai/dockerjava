@@ -10,7 +10,7 @@ FROM bitnami/tomcat
 # COPY manager.xml /usr/local/tomcat/conf/Catalina/localhost/
 # COPY host-manager.xml /usr/local/tomcat/conf/Catalina/localhost/
 # COPY settings.xml /usr/local/tomcat/conf/
-# COPY tomcat-users.xml /usr/local/tomcat/conf/
+ COPY tomcat-users.xml /usr/local/tomcat/conf/
 # COPY context.xml /usr/local/tomcat/webapps/manager/META-INF/
 
 # Deploy .war file to tomcat
