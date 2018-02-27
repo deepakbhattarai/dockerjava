@@ -15,5 +15,5 @@ ADD HelloWorld.war /usr/local/tomcat/webapps/HelloWorld.war
 
 EXPOSE 8080
 
-RUN ./usr/local/tomcat/bin/shutdown.sh
-RUN ./usr/local/tomcat/bin/startup.sh
+CMD ./usr/local/tomcat/bin/shutdown.sh
+CMD ./usr/local/tomcat/bin/startup.sh
