@@ -9,12 +9,12 @@ pipeline {
         }
         stage('Build Image') {
             steps {
-                sh 'docker build -t hellotomcat .'
+                sh 'docker build -t tomcaty .'
            }
         }
         stage('Run Image') {
             steps {
-                sh 'docker run -d --name tommy -p 8080:8080 tomcat'
+                sh 'docker run -d --name tommy -p 8080:8080 tomcaty'
                 }
           }
     }

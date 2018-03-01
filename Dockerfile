@@ -10,13 +10,16 @@ FROM tomcat
 # COPY manager.xml /usr/local/tomcat/conf/Catalina/localhost/
 # COPY host-manager.xml /usr/local/tomcat/conf/Catalina/localhost/
 # COPY settings.xml /usr/local/tomcat/conf/
-ADD tomcat-users.xml /usr/local/tomcat/conf/tomcat-users.xml
-ADD context.xml /usr/local/tomcat/webapps/manager/META-INF/context.xml
+ADD tomcat-users.xml /usr/local/tomcat/conf/
+ADD context.xml /usr/local/tomcat/webapps/manager/META-INF/
 
 # Deploy .war file to tomcat
 ADD HelloWorld.war /usr/local/tomcat/webapps/HelloWorld.war
 
 EXPOSE 8080
+
+# Catalina run
+CMD ["catalina.sh", "run"]
 
 # CMD ./usr/local/tomcat/bin/shutdown.sh
 # CMD ./usr/local/tomcat/bin/startup.sh
