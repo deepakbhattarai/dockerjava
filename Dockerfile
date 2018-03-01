@@ -1,4 +1,4 @@
-FROM bitnami/tomcat
+FROM tomcat
 
 # Install apt-get
 # RUN apt-get update && apt-get install -y  nano
@@ -10,11 +10,11 @@ FROM bitnami/tomcat
 # COPY manager.xml /usr/local/tomcat/conf/Catalina/localhost/
 # COPY host-manager.xml /usr/local/tomcat/conf/Catalina/localhost/
 # COPY settings.xml /usr/local/tomcat/conf/
- COPY tomcat-users.xml /usr/local/tomcat/conf/
+RUN mv tomcat-users.xml /usr/local/tomcat/conf/
 # COPY context.xml /usr/local/tomcat/webapps/manager/META-INF/
 
 # Deploy .war file to tomcat
-ADD HelloWorld.war /usr/local/tomcat/webapps/HelloWorld.war
+COPY HelloWorld.war /usr/local/tomcat/webapps/HelloWorld.war
 
 EXPOSE 8080
 
