@@ -4,7 +4,7 @@ pipeline {
 	stage('Compile Java'){
             steps {
                 sh 'javac HelloWorld.java'
-                sh 'jar -cvfe HelloWorld.war HelloWorld HelloWorld.class'
+                sh 'cd sample && jar -cvf HelloWorld.war .'
                 }
         }
         stage('Build Image') {

@@ -7,6 +7,7 @@ FROM tomcat
 # RUN mkdir -p /usr/local/tomcat/conf
 
 # Copy configurations (Tomcat Users, Manager)
+
 # COPY manager.xml /usr/local/tomcat/conf/Catalina/localhost/
 # COPY host-manager.xml /usr/local/tomcat/conf/Catalina/localhost/
 # COPY settings.xml /usr/local/tomcat/conf/
@@ -14,9 +15,12 @@ FROM tomcat
 ADD tomcat-users.xml /usr/local/tomcat/conf/
 ADD context.xml /usr/local/tomcat/webapps/manager/META-INF/
 
-# Deploy .war file to tomcat
-ADD HelloWorld.war /usr/local/tomcat/webapps/HelloWorld.war
 
+# Deploy .war file to tomcat
+ADD helloworld/HelloWorld.war /usr/local/tomcat/webapps/HelloWorld.war
+
+
+# Expose port
 EXPOSE 8080 
 
 # Catalina run
