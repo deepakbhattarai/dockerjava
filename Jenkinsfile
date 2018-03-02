@@ -3,8 +3,8 @@ pipeline {
     stages {
 	stage('Compile Java'){
             steps {
-                sh 'javac HelloWorld.java'
-                sh 'cd sample && jar -cvf HelloWorld.war .'
+                sh 'cd helloworld && jar -cvf HelloWorld.war .'
+		sh 'cd ..'
                 }
         }
         stage('Build Image') {
